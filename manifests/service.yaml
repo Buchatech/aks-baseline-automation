@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: Flask-test-1
+  namespace: namespace-workflow-1679686553366
+spec:
+  type: LoadBalancer
+  selector:
+    app: Flask-test-1
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80

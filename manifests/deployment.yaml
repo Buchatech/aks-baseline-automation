@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Flask-test-1
+  labels:
+    app: Flask-test-1
+  namespace: namespace-workflow-1679686553366
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Flask-test-1
+  template:
+    metadata:
+      labels:
+        app: Flask-test-1
+    spec:
+      containers:
+        - name: Flask-test-1
+          image: acrworkflow1679686553366.azurecr.io/image-workflow-1679686553366:latest
+          ports:
+            - containerPort: 80
